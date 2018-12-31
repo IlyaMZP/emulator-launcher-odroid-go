@@ -1,0 +1,13 @@
+# Name,   Type, SubType, Offset,  Size
+nvs,      data, nvs,     0x9000,  0x4000
+otadata,  data, ota,     0xd000,  0x2000
+phy_init, data, phy,     0xf000,  0x1000
+launcher, app,  ota_0,  0x10000,  1984K
+app1,     app,  ota_1,   ,         1K
+app2,     app,  ota_2,   ,         1K
+app3,     app,  ota_3,   ,         1K
+app4,     app,  ota_4,   ,         1K
+app5,     app,  ota_5,   ,         1K
+app6,     app,  ota_6,   ,         1K
+storage,  data, spiffs,  ,         600K
+
