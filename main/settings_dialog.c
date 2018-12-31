@@ -30,10 +30,10 @@ void setter(ui_list_item_t *item, void *arg) {
 			odroid_settings_ScaleDisabled_set(ODROID_SCALE_DISABLE_NES, (int) arg);
 			break;
 		case SCALEDISABLED_GB:
-			odroid_settings_ScaleDisabled_set(SCALEDISABLED_GB, (int) arg);
+			odroid_settings_ScaleDisabled_set(ODROID_SCALE_DISABLE_GB, (int) arg);
 			break;
 		case SCALEDISABLED_SMS:
-			odroid_settings_ScaleDisabled_set(SCALEDISABLED_SMS, (int) arg);
+			odroid_settings_ScaleDisabled_set(ODROID_SCALE_DISABLE_SMS, (int) arg);
 			break;
 		case BACKLIGHT:
 			odroid_settings_Backlight_set((int) arg);
