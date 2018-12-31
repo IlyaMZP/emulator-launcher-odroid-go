@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := odroid-go-launcher
+PROJECT_NAME := emulator-launcher-odroid-go
 
 include $(IDF_PATH)/make/project.mk
 
