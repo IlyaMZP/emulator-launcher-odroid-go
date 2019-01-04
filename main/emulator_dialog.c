@@ -184,35 +184,35 @@ void loader(ui_list_item_t *item, void *arg) {
 			esp_restart();
 			break;
 		case GAME_BOY:
-			path = "/sd/roms/gb/";
+			strcpy(path, "/sd/roms/gb/");
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
 			odroid_system_application_set(2);
 			esp_restart();
 			break;
 		case GAME_BOY_COLOR:
-			path = "/sd/roms/gbc/";
+			strcpy(path, "/sd/roms/gbc/");
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
 			odroid_system_application_set(2);
 			esp_restart();
 			break;
 		case SEGA_MS:
-			path = "/sd/roms/sms/";
+			strcpy(path, "/sd/roms/sms/");
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
 			odroid_system_application_set(3);
 			esp_restart();
 			break;
 		case GAME_GEAR:
-			path = "/sd/roms/gg/";
+			strcpy(path, "/sd/roms/gg/");
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
 			odroid_system_application_set(3);
 			esp_restart();
 			break;
 		case COLECO_V:
-			path = "/sd/roms/col/";
+			strcpy(path, "/sd/roms/col/");
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
 			odroid_system_application_set(3);
