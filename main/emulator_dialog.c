@@ -19,6 +19,7 @@ enum
 	GAME_BOY_COLOR,
 	SEGA_MS,
 	GAME_GEAR,
+	COLECO_V,
 };
 
 
@@ -193,21 +194,28 @@ void loader(ui_list_item_t *item, void *arg) {
 			path = "/sd/roms/gbc/";
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
-			odroid_system_application_set(3);
+			odroid_system_application_set(2);
 			esp_restart();
 			break;
 		case SEGA_MS:
 			path = "/sd/roms/sms/";
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
-			odroid_system_application_set(4);
+			odroid_system_application_set(3);
 			esp_restart();
 			break;
 		case GAME_GEAR:
 			path = "/sd/roms/gg/";
 			strcat(path, fileName);
 			odroid_settings_RomFilePath_set(path);
-			odroid_system_application_set(5);
+			odroid_system_application_set(3);
+			esp_restart();
+			break;
+		case COLECO_V:
+			path = "/sd/roms/col/";
+			strcat(path, fileName);
+			odroid_settings_RomFilePath_set(path);
+			odroid_system_application_set(3);
 			esp_restart();
 			break;
 		default: break;
@@ -245,6 +253,11 @@ void file_picker(ui_list_item_t *item, void *arg) {
 			path = "/sd/roms/gg";
 			emu_name = "Game Gear";
 			extension = ".gg";
+			break;
+		case COLECO_V:
+			path = "/sd/roms/col";
+			emu_name = "ColecoVision";
+			extension = ".col";
 			break;
 		default: break;
 	}
@@ -295,6 +308,7 @@ void emulator_list_dialog(ui_list_item_t *item, void *arg) {
 	ui_list_append_text(list, "Game Boy Color", file_picker, (void *)GAME_BOY_COLOR);
 	ui_list_append_text(list, "Sega Master System", file_picker, (void *)SEGA_MS);
 	ui_list_append_text(list, "Game Gear", file_picker, (void *)GAME_GEAR);
+	ui_list_append_text(list, "ColecoVision", file_picker, (void *)COLECO_V);
 	ui_dialog_showmodal(d);
 	ui_dialog_destroy(d);
 }
