@@ -5,7 +5,7 @@
 
 gbuf_t *gbuf_new(uint16_t width, uint16_t height, uint16_t bytes_per_pixel, uint16_t endian)
 {
-    gbuf_t *g = malloc(sizeof(gbuf_t) + width * height * bytes_per_pixel);
+    gbuf_t *g = heap_caps_malloc(sizeof(gbuf_t) + width * height * bytes_per_pixel, MALLOC_CAP_SPIRAM);
     if (!g) abort();
 
     g->width = width;
